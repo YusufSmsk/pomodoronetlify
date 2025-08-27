@@ -1,6 +1,6 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #242424;
+    background-color: #252525;
     color: #787774;
     text-align: center;
     padding-top: 0px;
@@ -23,7 +23,7 @@ button {
 }
 
 .buttons button{
-    background-color: #242424;
+    background-color: #252525;
     border-style: solid;
     border-color: #787774;
 }
