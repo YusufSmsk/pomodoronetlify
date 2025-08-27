@@ -9,6 +9,7 @@ body {
 #timer {
   font-size: 70px;
   margin: 15px 0;
+  font-weight: bold;
 }
 
 button {
