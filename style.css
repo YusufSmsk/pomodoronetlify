@@ -9,7 +9,7 @@ body {
 #timer {
     color: #787774;
     font-size: 70px;
-    margin: 15px 0;
+    margin: 1px 0px;
     font-weight: bold;
 }
 
@@ -17,7 +17,7 @@ button {
     color: #787774;
     font-weight: bold;
     font-size: 20px;
-    margin: 15px;
+    margin: 5px 0px;
     padding: 3px 20px;
     cursor: pointer;
 }
