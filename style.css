@@ -4,7 +4,7 @@ body {
   color: #787774;
   text-align: center;
   
-  padding-top: 0px; /* veya 20px ya da 40px */
+  padding-top: 0px;
 }
 
 #timer {
@@ -14,6 +14,7 @@ body {
 }
 
 button {
+  color: #787774;
   font-size: 20px;
   margin: 15px;
   padding: 3px 20px;
