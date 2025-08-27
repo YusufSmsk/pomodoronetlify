@@ -1,18 +1,20 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #242424;
-    color: black;
+    color: #787774;
     text-align: center;
     padding-top: 0px;
 }
 
 #timer {
+    color: #787774;
     font-size: 70px;
     margin: 15px 0;
     font-weight: bold;
 }
 
 button {
+    color: #787774;
     font-weight: bold;
     font-size: 20px;
     margin: 15px;
@@ -22,5 +24,6 @@ button {
 
 .buttons button{
     background-color: #242424;
-    border-style: #242424;
+    border-style: solid;
+    border-color: #787774;
 }
