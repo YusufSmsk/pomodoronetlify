@@ -6,12 +6,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="timer">50:00</div>
-  <div class="buttons" style="display: flex; flex-direction: column; gap: 5px; align-items: center;">
-    <button id="start" style="font-family: 'Times New Roman', serif;">Başlat</button>
-    <button id="pause" style="font-family: 'Times New Roman', serif;">Duraklat</button>
-    <button id="reset" style="font-family: 'Times New Roman', serif;">Sıfırla</button>
+  <div id="timer">00:00</div>
+  
+  <!-- Şablon Seçme -->
+  <div id="templates" style="margin: 10px; display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
+    <button class="template" data-work="50" data-break="10">50-10</button>
+    <button class="template" data-work="30" data-break="5">30-5</button>
+    <button class="template" data-work="25" data-break="5">25-5</button>
   </div>
+
+  <!-- Kontrol Butonları -->
+  <div class="buttons" style="display: flex; flex-direction: column; gap: 5px; align-items: center;">
+    <button id="start">Başlat</button>
+    <button id="pause">Duraklat</button>
+    <button id="reset">Sıfırla</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
