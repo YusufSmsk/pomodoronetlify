@@ -17,15 +17,12 @@ function updateTimer() {
   const minutes = Math.floor(remaining / 60);
   const seconds = remaining % 60;
   document.getElementById("timer").textContent =
-    `${isWork ? "Çalış" : "Mola"} - ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-  // Şablon isimleri
-  const curr = sessions[currentIndex];
+  // Sonraki buton yazısını güncelle
   const next = sessions[(currentIndex + 1) % sessions.length];
-  document.getElementById("currentSession").textContent =
-    `Şu an: ${curr.work/60}dk-${curr.break/60}dk`;
-  document.getElementById("nextSession").textContent =
-    `Sonraki: ${next.work/60}dk-${next.break/60}dk`;
+  document.getElementById("skip").textContent =
+    `${next.work/60}dk-${next.break/60}dk`;
 }
 
 function startTimer() {
@@ -74,12 +71,11 @@ document.getElementById("reset").onclick = function () {
 document.getElementById("skip").onclick = function () {
   clearInterval(interval);
   interval = null;
-  // Sonraki şablona geç
   isWork = true;
   currentIndex = (currentIndex + 1) % sessions.length;
   remaining = sessions[currentIndex].work;
   endTime = null;
-  updateTimer(); // hemen güncelle
+  updateTimer();
 };
 
 updateTimer();
