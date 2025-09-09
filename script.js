@@ -1,11 +1,12 @@
 let sessions = [
-  { work: 50 * 60, break: 10 * 60 }, // 50 dk ders, 10 dk mola
-  { work: 30 * 60, break: 5 * 60 }   // 30 dk ders, 5 dk mola
+  { work: 50 * 60, break: 10 * 60 },
+  { work: 30 * 60, break: 5 * 60 },
+  { work: 25 * 60, break: 5 * 60 }
 ];
 
-let currentSession = 0;
+let currentIndex = 0;
 let isWork = true;
-let remaining = sessions[currentSession].work;
+let remaining = sessions[currentIndex].work;
 let interval;
 let endTime = null;
 
@@ -17,6 +18,14 @@ function updateTimer() {
   const seconds = remaining % 60;
   document.getElementById("timer").textContent =
     `${isWork ? "Çalış" : "Mola"} - ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+  // Şablon isimleri
+  const curr = sessions[currentIndex];
+  const next = sessions[(currentIndex + 1) % sessions.length];
+  document.getElementById("currentSession").textContent =
+    `Şu an: ${curr.work/60}dk-${curr.break/60}dk`;
+  document.getElementById("nextSession").textContent =
+    `Sonraki: ${next.work/60}dk-${next.break/60}dk`;
 }
 
 function startTimer() {
@@ -27,16 +36,16 @@ function startTimer() {
       if (remaining <= 0) {
         clearInterval(interval);
         interval = null;
-        // Çalışma -> Mola geçişi
         if (isWork) {
+          // Çalışma bittiyse mola
           isWork = false;
-          remaining = sessions[currentSession].break;
+          remaining = sessions[currentIndex].break;
           startTimer();
         } else {
-          // Mola bittiyse yeni şablona geç
+          // Mola bittiyse sıradaki şablon
           isWork = true;
-          currentSession = (currentSession + 1) % sessions.length;
-          remaining = sessions[currentSession].work;
+          currentIndex = (currentIndex + 1) % sessions.length;
+          remaining = sessions[currentIndex].work;
           startTimer();
         }
       }
@@ -56,10 +65,21 @@ document.getElementById("reset").onclick = function () {
   clearInterval(interval);
   interval = null;
   isWork = true;
-  currentSession = 0;
-  remaining = sessions[currentSession].work;
+  currentIndex = 0;
+  remaining = sessions[currentIndex].work;
   endTime = null;
   updateTimer();
+};
+
+document.getElementById("skip").onclick = function () {
+  clearInterval(interval);
+  interval = null;
+  // Sonraki şablona geç
+  isWork = true;
+  currentIndex = (currentIndex + 1) % sessions.length;
+  remaining = sessions[currentIndex].work;
+  endTime = null;
+  updateTimer(); // hemen güncelle
 };
 
 updateTimer();

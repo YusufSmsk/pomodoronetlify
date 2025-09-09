@@ -1,29 +1,43 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #191919;
-    color: #ffffff;
-    text-align: center;
-    padding-top: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #191919;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 20px;
 }
 
 #timer {
-    color: #ffffff;
-    font-size: 70px;
-    margin: 1px 0px;
-    font-weight: bold;
+  color: #ffffff;
+  font-size: 70px;
+  margin: 20px 0px;
+  font-weight: bold;
+}
+
+#currentSession, #nextSession {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
 }
 
 button {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 5px 0px;
-    padding: 3px 20px;
-    cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  background-color: #191919;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.buttons button{
-    background-color: #191919;
-    border-style: solid;
-    border-color: #ffffff;
+button:hover {
+  background-color: #333;
 }

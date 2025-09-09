@@ -8,18 +8,14 @@
 <body>
   <div id="timer">00:00</div>
   
-  <!-- Şablon Seçme -->
-  <div id="templates" style="margin: 10px; display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-    <button class="template" data-work="50" data-break="10">50-10</button>
-    <button class="template" data-work="30" data-break="5">30-5</button>
-    <button class="template" data-work="25" data-break="5">25-5</button>
-  </div>
-
-  <!-- Kontrol Butonları -->
-  <div class="buttons" style="display: flex; flex-direction: column; gap: 5px; align-items: center;">
+  <div id="currentSession">Şu an: 50-10</div>
+  <div id="nextSession">Sonraki: 30-5</div>
+  
+  <div class="buttons">
     <button id="start">Başlat</button>
     <button id="pause">Duraklat</button>
     <button id="reset">Sıfırla</button>
+    <button id="skip">Sonraki</button>
   </div>
 
   <script src="script.js"></script>
